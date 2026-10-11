@@ -26,6 +26,11 @@ Otherwise, it is still possible to program and debug the board via ST-LINK throu
 
 After flashing the firmware, reboot the board and get started playing around with GPIOs!
 
+## Assembly
+
+The PCB assembly will be done by manually soldering all the parts to the PCB.
+
+
 ## Images
 
 ### 3D PCB View — Front
