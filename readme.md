@@ -94,4 +94,4 @@ The bill of materials with links to parts is listed in [`bom.csv`](bom.csv)
 | 1 | STM32H573RIT6 Microcontroller — Backordered | STM32H573RIT6 | LCSC | [Link](https://www.lcsc.com/product-detail/C22371377.html) | 1 | $9.9787 | $9.98 |
 | 50 | 6×6 mm Tactile Switch | SH-6X6X5H-STM | LCSC | [Link](https://www.lcsc.com/product-detail/C22383475.html) | 50 | $0.0115 | $0.58 |
 | 1 | PCB Fabrication | Custom STM32H573 PCB | JLCPCB | [JLCPCB](https://jlcpcb.com/) | 1 | $8.00 | $8.00 |
-| | Total cost | | | | | | $26.63 |
+| | Total cost | | | | | | $34.63 |
