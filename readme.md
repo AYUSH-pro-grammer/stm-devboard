@@ -1,42 +1,31 @@
 # STM32H573 Development Board
 
-A custom development board based on the **STM32H573RIT6** microcontroller. Created in KiCad as a platform for learning about microcontroller hardware design, PCB layout, power supply, and embedded systems.
+A custom development board based on the STM32H573RIT6 microcontroller, created in KiCad that serves the purpose of learning about the hardware design, PCB layout, power supply and embedded systems.
 
 ## Features
 
-### Core Components
-- **Power Supply:** The board gets power from the USB-C connector. 3.3 V is supplied by the LD1117S33TR regulator.
-- **Microcontroller:** The STM32H573RIT6 chip processes the firmware code and communicates with peripherals.
-- **Clock Source:** 8 MHz crystal is used as an external clock source for the microcontroller.
-- **Reset and Boot:** The pushbuttons and corresponding resistors are used for resetting and switching to boot mode.
-- **USB Protection:** The USBLC6-2P6 is used for ESD protection of USB lines.
-- **Programming and Debugging:** The SWD connector is used for flashing firmware and debugging.
-- **Expansion:** The headers expose some of the pins for expansion.
+### Core components
+- Power supply: The board is powered through the USB-C connector. 3.3 V is supplied by the LD1117S33TR regulator.
+- Microcontroller: The STM32H573RIT6 processes the firmware code and communicates with peripherals.
+- Clock source: 8 MHz crystal serves as an external clock for the microcontroller.
+- Pushbuttons and resistors: Used to reset and enter the boot mode.
+- USB Protection: USBLC6-2P6 is used for ESD protection of the USB lines.
+- Programming and debugging: SWD connector is used for flashing firmware and debugging.
+- Headers: Expose some of the pins for expansion.
 
 
+## The reason behind making this
 
-## Block Diagram
+This board was made by me in order to gain knowledge about how to make an STM32 development board on my own rather than relying on readymade boards available out there.
 
-```text
-       USB-C Connector
-              |
-              v
-       LD1117S33TR
-        3.3V Supply
-              |
-              v
-       STM32H573RIT6
-        /     |      \
-       /      |       \
-   8 MHz    SWD Debug   GPIO
-  Crystal   Connector  Headers
+## Flashing and use
 
- USB D+ / D-
-       |
-       v
- USBLC6-2P6
- USB Protection
-```
+The board is equipped with a USB-C port thus it can be connected to a PC. In case that USB DFU bootloading is set up properly, you may flash the firmware directly via USB and no ST-LINK debugger will be required.
+
+Otherwise, it is still possible to program and debug the board via ST-LINK through the SWD connector.
+
+After flashing the firmware, reboot the board and get started playing around with GPIOs!
+
 ## Images
 
 ### 3D PCB View — Front
@@ -57,23 +46,21 @@ A custom development board based on the **STM32H573RIT6** microcontroller. Creat
 
 ## Hardware Design
 
-Both the schematic and the PCB design were developed using **KiCad**.
+I have used KiCad to design both the schematic and the PCB.
 
 - `kicad/` — Schematic and PCB design files
 - `images/` — Images of PCB rendering, schematic and routing
 - `gerber-files/` — PCB manufacturing files
 - `bom.csv` — Bill of materials with links to parts
-- `grb.zip` — Gerber archive, if present
+- `grb.zip` — Gerber archive if present
 
 ## Bill of Materials
 
 The bill of materials with links to parts is listed in [`bom.csv`](bom.csv)
 
-
 ## BOM
 
-
-| **Qty** | **Component** | **Selected Part** | **Supplier** | **Link** | **MOQ** | **Unit Price (USD)** | **Order Cost (USD)** |
+| Qty | Component | Selected Part | Supplier | Link | MOQ | Unit Price (USD) | Order Cost (USD) |
 | -------: | ------------- | ----------------- | ------------ | -------- | -------: | --------------------: | -------------------: |
 | 100 | 30 pF Capacitor, 0603 C0G | TCC0603COG300J500CT | LCSC | [Link](https://www.lcsc.com/product-detail/C376782.html) | 100 | $0.0042 | $0.42 |
 | 20 | Red LED, 0603 | DY-0603SRC-L-SMG | LCSC | [Link](https://www.lcsc.com/product-detail/C524047.html) | 20 | $0.0252 | $0.50 |
@@ -102,4 +89,4 @@ The bill of materials with links to parts is listed in [`bom.csv`](bom.csv)
 | 1 | STM32H573RIT6 Microcontroller — Backordered | STM32H573RIT6 | LCSC | [Link](https://www.lcsc.com/product-detail/C22371377.html) | 1 | $9.9787 | $9.98 |
 | 50 | 6×6 mm Tactile Switch | SH-6X6X5H-STM | LCSC | [Link](https://www.lcsc.com/product-detail/C22383475.html) | 50 | $0.0115 | $0.58 |
 | 1 | PCB Fabrication | Custom STM32H573 PCB | JLCPCB | [JLCPCB](https://jlcpcb.com/) | 1 | $8.00 | $8.00 |
-| | **Total cost** | | | | | | **$26.63** |
+| | Total cost | | | | | | $26.63 |
